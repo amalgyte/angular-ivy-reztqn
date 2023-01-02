@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "reference": "I00000082",
+      "firstName": "Barry",
+      "surname": "Allen",
+      "arrivalDateTime": "2020-06-06T10:30",
+      "dob": "1956-10-09"
+    },
+    {
+      "id": "2",
+      "reference": "I00000084",
+      "firstName": "Oliver",
+      "surname": "Queen",
+      "arrivalDateTime": "2018-09-12T23:45",
+      "dob": "1941-11-15"
+    },
+    {
+      "id": "3",
+      "reference": "I00000012",
+      "firstName": "Ray",
+      "surname": "Palmer",
+      "arrivalDateTime": "2011-07-23T14:00",
+      "dob": "1961-10-02"
+    },
+    {
+      "id": "4",
+      "reference": "I00000018",
+      "firstName": "Peter",
+      "surname": "Parker",
+      "arrivalDateTime": "2021-05-11T12:00",
+      "dob": "1962-08-23"
+    },
+    {
+      "id": "5",
+      "reference": "I00000011",
+      "firstName": "Hal",
+      "surname": "Jordan",
+      "arrivalDateTime": "2017-02-14T09:15",
+      "dob": "1959-10-21"
+    },
+    {
+      "id": "6",
+      "reference": "I00000006",
+      "firstName": "John",
+      "surname": "Constantine",
+      "arrivalDateTime": "2015-10-17T18:20",
+      "dob": "1985-06-31"
+    }
+  ]
+}

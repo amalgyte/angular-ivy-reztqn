@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+Inmates
+</mat-toolbar>
+
+<div class="content">
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource; else noData">
+  <ng-container matColumnDef="referenceNumber">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef> Reference </th>
+    <td mat-cell *matCellDef="let inmate"> {{inmate.referenceNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let inmate"> {{inmate.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arrivalDate">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef> Arrival Date </th>
+    <td mat-cell *matCellDef="let inmate"> {{inmate.arrivalDate | date}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+
+<ng-template #noData>
+  No Data
+</ng-template>
+</div>

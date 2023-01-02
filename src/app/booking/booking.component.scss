@@ -1,0 +1,14 @@
+.content {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  margin-bottom: 10px;
+}

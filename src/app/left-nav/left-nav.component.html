@@ -1,0 +1,10 @@
+<div class="content">
+  <h3>Inmate Manager</h3>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of menuItems">
+      <mat-icon class="icon" aria-hidden="false">{{ item.icon }}</mat-icon>
+      <a class="menu-item" [routerLink]="item.route">{{ item.label }}</a>
+    </mat-list-item>
+  </mat-list>
+</div>

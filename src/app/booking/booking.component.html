@@ -1,0 +1,104 @@
+<mat-toolbar color="primary">Booking</mat-toolbar>
+
+<div class="content">
+  <h2>Please enter new inmate details</h2>
+
+  <form [formGroup]="bookingForm">
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input
+        matInput
+        formControlName="firstName"
+        pattern="[a-zA-Z ]*"
+        (input)="inputValidator($event)"
+        required
+      />
+      <mat-error
+        *ngIf="bookingForm.get('firstName')?.hasError('required') && submitted"
+      >
+        First name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Surname</mat-label>
+      <input
+        matInput
+        formControlName="surname"
+        (input)="inputValidator($event)"
+        pattern="[a-zA-Z ]*"
+        required
+      />
+      <mat-error
+        *ngIf="bookingForm.get('surname')?.hasError('required') && submitted"
+      >
+        Surname is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date of Birth</mat-label>
+      <input
+        matInput
+        [matDatepicker]="dobPicker"
+        formControlName="dob"
+        [max]="maxDate"
+        required
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="dobPicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #dobPicker></mat-datepicker>
+      <mat-error
+        *ngIf="bookingForm.get('dob')?.hasError('required') && submitted"
+      >
+        Date of Birth is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Arrival Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="arrivalPicker"
+        formControlName="arrivalDate"
+        [max]="maxDate"
+        required
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="arrivalPicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #arrivalPicker></mat-datepicker>
+      <mat-error
+        *ngIf="
+          bookingForm.get('arrivalDate')?.hasError('required') && submitted
+        "
+      >
+        Arrival Date is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Arrival Time</mat-label>
+      <input matInput formControlName="arrivalTime" type="time" required />
+      <mat-error
+        *ngIf="
+          bookingForm.get('arrivalTime')?.hasError('required') && submitted
+        "
+      >
+        Arrival time is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="!bookingForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
